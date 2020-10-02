@@ -52,7 +52,7 @@ namespace Yoloanno.Yolo
         public void ApplyFromStr(string yoloTrainDataStr)
         {
             string[] @params;
-            if (string.IsNullOrEmpty(yoloTrainDataStr) || (@params = yoloTrainDataStr.Split(new char[] { ' ' })).Length != 5) return;
+            if (string.IsNullOrEmpty(yoloTrainDataStr) || (@params = yoloTrainDataStr.Split(new char[] { ' ' },StringSplitOptions.RemoveEmptyEntries)).Length != 5) return;
             RegionIndex = Convert.ToInt16(@params[0]);
             YoloX = float.Parse(@params[1]);
             YoloY = float.Parse(@params[2]);
